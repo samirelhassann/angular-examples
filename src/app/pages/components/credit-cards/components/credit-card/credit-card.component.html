@@ -1,0 +1,21 @@
+<div class="container">
+  <div
+    class="credit-card"
+    [class]="variant | cardVariantColor">
+    <div class="header">
+      <div class="balance-section">
+        <span class="balance-section--label"> Current Balance </span>
+        <span class="balance-section--quantity"> {{ currentBalance | currency }} </span>
+      </div>
+      <img
+        class="header--logo"
+        src="mastercard.svg"
+        alt="Logo do Cartão" />
+    </div>
+
+    <div class="footer">
+      <span class="footer--card-number"> {{ cardNumber | cardNumberFormat }} </span>
+      <span class="footer--expiration"> {{ expirationDate | date: "MM/yy" }} </span>
+    </div>
+  </div>
+</div>
