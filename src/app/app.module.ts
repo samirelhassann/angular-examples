@@ -2,10 +2,11 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router"; // Importe o RouterModule
 
-import { ComponentsModule } from "./pages/components/components.module";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { CreditCardsModule } from "./examples/credit-cards/credit-cards.module";
+import { LoginFormModule } from "./examples/login-form/login-form.module";
+import { UserListingModule } from "./examples/user-listing/credit-cards.module";
 import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.component";
 
 @NgModule({
@@ -17,7 +18,10 @@ import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.co
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
-    ComponentsModule,
+
+    CreditCardsModule,
+    LoginFormModule,
+    UserListingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

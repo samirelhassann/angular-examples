@@ -1,17 +1,22 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { CreditCardsComponent } from "./pages/components/credit-cards/credit-cards.component";
-import { LoginFormComponent } from "./pages/components/login-form/login-form.component";
+import { CreditCardsComponent } from "./examples/credit-cards/credit-cards.component";
+import { LoginFormComponent } from "./examples/login-form/login-form.component";
+import { UserListingComponent } from "./examples/user-listing/user-listing.component";
 
 const routes: Routes = [
   {
-    path: "1_components/credit-cards",
+    path: "credit-cards",
     component: CreditCardsComponent,
   },
   {
-    path: "1_components/login-form",
+    path: "login-form",
     component: LoginFormComponent,
+  },
+  {
+    path: "user-listing",
+    component: UserListingComponent,
   },
 ];
 

@@ -27,11 +27,15 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
       {
 
         label: "Credit Cards",
-        route: "/1_components/credit-cards",
+        route: "/credit-cards",
       },
       {
         label: "Login Form",
-        route: "/1_components/login-form",
+        route: "/login-form",
+      },
+      {
+        label: "User Listing",
+        route: "/user-listing",
       },
     ];
 
