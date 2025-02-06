@@ -6,7 +6,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CreditCardsModule } from "./examples/credit-cards/credit-cards.module";
 import { LoginFormModule } from "./examples/login-form/login-form.module";
-import { UserListingModule } from "./examples/user-listing/credit-cards.module";
+import { UserListingModule } from "./examples/user-listing/user-listing.module";
 import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.component";
 
 @NgModule({

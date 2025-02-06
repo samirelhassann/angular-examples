@@ -1,25 +1,33 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-// @use '@angular/material' as mat;
-
-// html {
-//   @include mat.theme((
-//     color: (
-//       theme-type: light,
-//       primary: mat.$azure-palette,
-//       tertiary: mat.$blue-palette,
-//     ),
-//     typography: Roboto,
-//     density: 0,
-//   ));
-// }
-
-@use 'tokens' as *;
+@use "tokens" as *;
 
 body {
   background-color: #171717;
-  font-family: 'mona-sans', sans-serif;
+  font-family: "mona-sans", sans-serif;
   color: $color-silver-300;
   margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-silver-500;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $color-magenta-600;
 }

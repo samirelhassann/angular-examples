@@ -1,38 +1,58 @@
-@use 'tokens' as *;
+@use "tokens" as *;
 
 .credit-card {
-  width: 400px;
-  height: 200px;
   padding: 30px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  gap: 70px;
   border-radius: 45px;
   position: relative;
   overflow: hidden;
 
   &--violet {
-    background: 
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.233), transparent 40%),
-    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.2), transparent 10%),
-    linear-gradient(to top right, #986dff, #2b37e2),
-    linear-gradient(to bottom right, #986dff, #2b37e2);
+    background: radial-gradient(
+        circle at top right,
+        rgba(255, 255, 255, 0.233),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(0, 0, 0, 0.2),
+        transparent 10%
+      ),
+      linear-gradient(to top right, #986dff, #2b37e2),
+      linear-gradient(to bottom right, #986dff, #2b37e2);
   }
 
   &--black {
-    background: 
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.233), transparent 40%),
-    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.2), transparent 10%),
-    linear-gradient(to top right, #00000070, #434343),
-    linear-gradient(to bottom right, #00000070, #434343);
+    background: radial-gradient(
+        circle at top right,
+        rgba(255, 255, 255, 0.233),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(0, 0, 0, 0.2),
+        transparent 10%
+      ),
+      linear-gradient(to top right, #00000070, #434343),
+      linear-gradient(to bottom right, #00000070, #434343);
   }
 
   &--blue {
-    background: 
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.233), transparent 40%),
-    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.2), transparent 10%),
-    linear-gradient(to top right, #00b0ff, #001c7f),
-    linear-gradient(to bottom right, #00b0ff, #001c7f);
+    background: radial-gradient(
+        circle at top right,
+        rgba(255, 255, 255, 0.233),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(0, 0, 0, 0.2),
+        transparent 10%
+      ),
+      linear-gradient(to top right, #00b0ff, #001c7f),
+      linear-gradient(to bottom right, #00b0ff, #001c7f);
   }
 }
 
@@ -57,7 +77,7 @@
 
   &--label {
     font-size: 1.125rem;
-    color: #FFFFFF88;
+    color: #ffffff88;
   }
 
   &--quantity {
