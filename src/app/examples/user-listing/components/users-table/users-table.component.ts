@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 
-import { User } from "../../domains/User";
+import { User } from "../../domains/user";
 import { UserDetailsDialogComponent } from "../user-details-dialog/user-details-dialog.component";
 
 @Component({

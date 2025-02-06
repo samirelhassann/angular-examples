@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-import { User } from "../domains/User";
+import { User } from "../domains/user";
 
 export default function makeUserList() {
   return Array.from(

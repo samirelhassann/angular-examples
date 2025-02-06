@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import makeUserList from "./data/makeUserList";
-import { User } from "./domains/User";
+import { User } from "./domains/user";
 
 @Component({
   selector: "app-user-listing",
@@ -10,11 +10,16 @@ import { User } from "./domains/User";
   templateUrl: "./user-listing.component.html",
   styleUrl: "./user-listing.component.scss",
 })
-export class UserListingComponent {
-  users: User[] = makeUserList();
-  formattedUsers: User[] = this.users;
+export class UserListingComponent implements OnInit {
+  users: User[] = [];
+  filteredUsers: User[] = [];
+
+  ngOnInit(): void {
+    this.users = makeUserList();
+    this.filteredUsers = this.users;
+  }
 
   onSearchInputted(inputText: string) {
-    this.formattedUsers = this.users.filter((user) => user.name.toLowerCase().includes(inputText.toLowerCase()));
+    this.filteredUsers = this.users.filter((user) => user.name.toLowerCase().includes(inputText.toLowerCase()));
   }
 }

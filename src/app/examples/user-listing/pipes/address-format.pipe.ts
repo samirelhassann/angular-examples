@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
-import { Address } from "../domains/Address";
+import { Address } from "../domains/address";
 
 @Pipe({
   name: "addressFormat",
