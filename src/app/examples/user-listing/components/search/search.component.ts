@@ -19,9 +19,11 @@ export class SearchComponent {
   private searchSubject = new Subject<string>();
 
   constructor() {
-    this.searchSubject.pipe(debounceTime(500)).subscribe((inputText: string) => {
-      this.searchInputtedEmitt.emit(inputText);
-    });
+    this.searchSubject
+      .pipe(debounceTime(500))
+      .subscribe((inputText: string) => {
+        this.searchInputtedEmitt.emit(inputText);
+      });
   }
 
   onSearchFocus(isFocus: boolean) {

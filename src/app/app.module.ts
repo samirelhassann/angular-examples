@@ -10,10 +10,7 @@ import { UserListingModule } from "./examples/user-listing/user-listing.module";
 import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProjectsMappingComponent,
-  ],
+  declarations: [AppComponent, ProjectsMappingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,4 +23,4 @@ import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.co
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

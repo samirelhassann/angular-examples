@@ -25,7 +25,6 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
   constructor(private router: Router) {
     this.items = [
       {
-
         label: "Credit Cards",
         route: "/credit-cards",
       },
@@ -59,7 +58,9 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
   formattedRoutes(routes: Route[]): Route[] {
     return routes.map((item) => {
       if (!item.showSubItems) {
-        const hasSomeSubItemActivated = item.subItems?.some((subItem) => subItem.route && this.isActive(subItem.route));
+        const hasSomeSubItemActivated = item.subItems?.some(
+          (subItem) => subItem.route && this.isActive(subItem.route),
+        );
 
         item.showSubItems = hasSomeSubItemActivated ?? false;
       }

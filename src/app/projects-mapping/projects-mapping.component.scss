@@ -1,4 +1,4 @@
-@use 'tokens' as *;
+@use "tokens" as *;
 
 .container {
   padding: 20px 40px;
@@ -8,7 +8,7 @@
 }
 
 .title {
-  font-size: 24px; 
+  font-size: 24px;
   font-weight: bold;
   user-select: none;
   margin-bottom: 30px;
@@ -25,7 +25,7 @@
   gap: 14px;
 }
 
-.item_list {
+.item-list {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -38,11 +38,11 @@
   }
 }
 
-.item_list.active {
+.item-list.active {
   color: $color-magenta-400;
   font-weight: bold;
 }
 
-.sub_item {
+.sub-item {
   margin-top: 8px;
 }

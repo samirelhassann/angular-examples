@@ -5,7 +5,9 @@
     <div class="header">
       <div class="balance-section">
         <span class="balance-section--label"> Current Balance </span>
-        <span class="balance-section--quantity"> {{ currentBalance | currency }} </span>
+        <span class="balance-section--quantity">
+          {{ currentBalance | currency }}
+        </span>
       </div>
       <img
         class="header--logo"
@@ -14,8 +16,12 @@
     </div>
 
     <div class="footer">
-      <span class="footer--card-number"> {{ cardNumber | cardNumberFormat }} </span>
-      <span class="footer--expiration"> {{ expirationDate | date: "MM/yy" }} </span>
+      <span class="footer--card-number">
+        {{ cardNumber | cardNumberFormat }}
+      </span>
+      <span class="footer--expiration">
+        {{ expirationDate | date: "MM/yy" }}
+      </span>
     </div>
   </div>
 </div>

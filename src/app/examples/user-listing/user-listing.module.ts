@@ -4,7 +4,13 @@ import { FormsModule } from "@angular/forms";
 import { MatDialogModule } from "@angular/material/dialog";
 
 import {
-  LucideAngularModule, File, Home, Menu, UserCheck, Search, X,
+  LucideAngularModule,
+  File,
+  Home,
+  Menu,
+  UserCheck,
+  Search,
+  X,
 } from "lucide-angular";
 
 import { SearchComponent } from "./components/search/search.component";
@@ -30,8 +36,13 @@ import { UserListingComponent } from "./user-listing.component";
     FormsModule,
     MatDialogModule,
     LucideAngularModule.pick({
-      File, Home, Menu, UserCheck, Search, X,
+      File,
+      Home,
+      Menu,
+      UserCheck,
+      Search,
+      X,
     }),
   ],
 })
-export class UserListingModule { }
+export class UserListingModule {}

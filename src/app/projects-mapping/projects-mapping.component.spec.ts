@@ -9,8 +9,7 @@ describe("ProjectsMappingComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ProjectsMappingComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectsMappingComponent);
     component = fixture.componentInstance;

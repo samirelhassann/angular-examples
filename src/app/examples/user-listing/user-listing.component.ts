@@ -20,6 +20,8 @@ export class UserListingComponent implements OnInit {
   }
 
   onSearchInputted(inputText: string) {
-    this.filteredUsers = this.users.filter((user) => user.name.toLowerCase().includes(inputText.toLowerCase()));
+    this.filteredUsers = this.users.filter((user) =>
+      user.name.toLowerCase().includes(inputText.toLowerCase()),
+    );
   }
 }

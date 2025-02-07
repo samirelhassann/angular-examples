@@ -5,12 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { LoginFormComponent } from "./login-form.component";
 
 @NgModule({
-  declarations: [
-    LoginFormComponent,
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-  ],
+  declarations: [LoginFormComponent],
+  imports: [CommonModule, FormsModule],
 })
-export class LoginFormModule { }
+export class LoginFormModule {}

@@ -1,7 +1,5 @@
 @use "tokens" as *;
 
-
-
 .search {
   position: relative;
   transition: all 0.3s;
@@ -50,12 +48,11 @@
     height: 25px;
     caret-color: $color-magenta-600;
     padding-right: 35px;
-  
-  
+
     &::placeholder {
       color: $color-silver-600;
     }
-  
+
     &:focus {
       transition: all 0.3s;
       outline: none;

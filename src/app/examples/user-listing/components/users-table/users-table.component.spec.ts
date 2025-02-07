@@ -9,8 +9,7 @@ describe("UsersTableComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UsersTableComponent],
-    })
-      .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(UsersTableComponent);
     component = fixture.componentInstance;

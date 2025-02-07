@@ -15,8 +15,6 @@ import { CardVariantColorPipe } from "./pipes/card-variant-color.pipe";
     CreditCardComponent,
     CreditCardsComponent,
   ],
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
 })
-export class CreditCardsModule { }
+export class CreditCardsModule {}

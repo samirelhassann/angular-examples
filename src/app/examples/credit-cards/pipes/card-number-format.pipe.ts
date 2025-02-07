@@ -18,7 +18,7 @@ export class CardNumberFormatPipe implements PipeTransform {
    *
    * @returns The formatted card number.
    */
-  transform(value:number): string {
+  transform(value: number): string {
     return value.toString().replace(/(\d{4})(?=\d)/g, "$1 ");
   }
 }

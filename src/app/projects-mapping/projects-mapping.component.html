@@ -9,7 +9,7 @@
       style="display: flex; flex-direction: column; justify-content: space-between">
       <ng-container *ngIf="item.route; else noRoute">
         <a
-          class="item_list"
+          class="item-list"
           [routerLink]="item.route"
           [class.active]="isActive(item.route)"
           (click)="toggleSubItems(item)">
@@ -19,7 +19,7 @@
 
       <ng-template #noRoute>
         <span
-          class="item_list"
+          class="item-list"
           (click)="toggleSubItems(item)">
           {{ item.label }}
         </span>
@@ -28,9 +28,9 @@
       <ul *ngIf="item.showSubItems">
         <li
           *ngFor="let subItem of item.subItems; trackBy: trackBySubItem"
-          class="sub_item">
+          class="sub-item">
           <a
-            class="item_list"
+            class="item-list"
             [routerLink]="subItem.route"
             [class.active]="subItem.route ? isActive(subItem.route) : false">
             {{ subItem.label }}

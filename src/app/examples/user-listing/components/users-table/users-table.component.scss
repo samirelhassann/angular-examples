@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 @use "tokens" as *;
 
 table {
@@ -5,22 +6,28 @@ table {
   border-collapse: collapse;
 }
 
-th,
+th {
+  padding: 0.5rem;
+  align-items: center;
+  display: flex;
+}
+
 td {
   padding: 0.5rem;
   align-items: center;
   display: flex;
 }
 
-th {
-  color: $color-magenta-400;
-}
-
-th {
-  text-align: center;
+th:nth-child(2),
+th:nth-child(3) {
+  justify-content: center;
 }
 
 td:nth-child(2),
+td:nth-child(3) {
+  justify-content: center;
+}
+
 td:nth-child(3),
 th:nth-child(2),
 th:nth-child(3) {
@@ -49,7 +56,6 @@ tr button {
   outline: none;
   align-items: center;
   color: $color-silver-300;
-  padding: 0px;
 }
 
 tbody {
