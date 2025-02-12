@@ -1,0 +1,19 @@
+@use "tokens" as *;
+
+.container {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 25rem;
+}
+
+.content {
+  width: 100%;
+  background: #202020;
+  border-end-end-radius: 0.75rem;
+  border-end-start-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 12px;
+}

@@ -1,0 +1,10 @@
+<div
+  class="item"
+  [class.bordered]="isBordered">
+  <span class="item--label">{{ label }}</span>
+  <span
+    class="item--value"
+    [class.highlight]="isValueHighlighted"
+    >{{ value | formatRowCardValue }}</span
+  >
+</div>

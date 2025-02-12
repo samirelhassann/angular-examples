@@ -11,12 +11,13 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: $color-silver-300;
+  color: $color-silver-400;
   user-select: none;
 }
 
 .list {
   list-style: none;
+  width: max-content;
   padding: 0;
   margin: 0;
   height: 100%;
@@ -41,7 +42,6 @@
 
 .item-list.active {
   color: $color-magenta-400;
-  font-weight: bold;
 }
 
 .sub-item {

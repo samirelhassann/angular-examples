@@ -1,0 +1,10 @@
+<header class="header">
+  <div class="header--title">
+    <lucide-icon
+      name="HandCoins"
+      size="23" />
+    <span>{{ title }}</span>
+  </div>
+
+  <span *ngIf="!!totalAmount"> {{ totalAmount | currency }}</span>
+</header>

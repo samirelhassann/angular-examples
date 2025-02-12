@@ -36,6 +36,10 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
         label: "User Listing",
         route: "/user-listing",
       },
+      {
+        label: "Credit Dashboard",
+        route: "/credit-dashboard",
+      },
     ];
 
     this.routerSubscription = this.router.events.subscribe((event) => {

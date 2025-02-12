@@ -1,0 +1,28 @@
+<div *ngIf="loadingHandler.isLoading$ | async; else content">
+  <app-card-wrapper
+    title="Available Balances"
+    [isLoading]="true" />
+</div>
+
+<ng-template #content>
+  <app-card-wrapper
+    title="Available Balances"
+    [totalAmount]="totalBalance">
+    <div class="container">
+      <app-card-row
+        *ngFor="let row of infos; let isLast = last"
+        [label]="row.label"
+        [value]="row.value"
+        [isBordered]="!isLast" />
+    </div>
+
+    <div class="highlight">
+      <app-card-row
+        *ngFor="let row of highlightInfos"
+        [label]="row.label"
+        [value]="row.value"
+        [isValueHighlighted]="true"
+        [isBordered]="false" />
+    </div>
+  </app-card-wrapper>
+</ng-template>

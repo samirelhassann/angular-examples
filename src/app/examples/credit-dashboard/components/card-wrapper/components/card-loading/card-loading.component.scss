@@ -1,0 +1,40 @@
+@use "tokens" as *;
+
+.container {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 25rem;
+}
+
+.content {
+  width: 100%;
+  background: #202020;
+  border-end-end-radius: 0.75rem;
+  border-end-start-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 29.375rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-icon {
+  display: inline-block;
+  animation: spin 1.5s linear infinite;
+  transform-origin: 50% 50%;
+  margin: 0;
+  padding: 0;
+  color: $color-magenta-600;
+  width: 40px;
+  height: 40px;
+}
