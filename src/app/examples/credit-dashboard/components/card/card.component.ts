@@ -12,4 +12,5 @@ export class CardComponent {
   @Input({ required: true }) title!: string;
   @Input({ required: true }) icon!: IconType;
   @Input() totalAmount?: number;
+  @Input() isTotalAmountLoading?: boolean = false;
 }

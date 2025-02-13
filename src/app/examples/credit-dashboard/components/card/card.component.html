@@ -1,8 +1,18 @@
 <div class="container">
-  <app-card-header
-    [title]="title"
-    [totalAmount]="totalAmount"
-    [icon]="icon" />
+  <header class="header">
+    <div class="header--title">
+      <lucide-icon
+        [name]="icon"
+        size="23" />
+      <span>{{ title }}</span>
+    </div>
+
+    <app-skeleton
+      [height]="18"
+      [width]="70"
+      *ngIf="isTotalAmountLoading" />
+    <span *ngIf="!isTotalAmountLoading && !!totalAmount"> {{ totalAmount | currency }}</span>
+  </header>
 
   <div class="content">
     <ng-content />

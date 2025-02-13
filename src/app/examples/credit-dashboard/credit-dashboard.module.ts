@@ -10,7 +10,6 @@ import {
 } from "lucide-angular";
 
 import { FinancialCardComponent } from "./components/available-balance/available-balance.component";
-import { CardHeaderComponent } from "./components/card-header/card-header.component";
 import { CardRowLoadingComponent } from "./components/card-row-loading/card-row-loading.component";
 import { CardRowComponent } from "./components/card-row/card-row.component";
 import { FormatRowCardValuePipe } from "./components/card-row/pipes/format-row-card-value.pipe";
@@ -28,7 +27,6 @@ import { FinancialService } from "./services/financial.service";
     FinancialCardComponent,
     CardRowComponent,
     CardComponent,
-    CardHeaderComponent,
 
     FormatRowCardValuePipe,
     CreditCardComponent,

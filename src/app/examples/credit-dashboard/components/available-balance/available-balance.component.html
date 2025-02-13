@@ -1,7 +1,8 @@
 <div *ngIf="loadingHandler.isLoading$ | async; else content">
   <app-card
     title="Available Balances"
-    icon="HandCoins">
+    icon="HandCoins"
+    [isTotalAmountLoading]="true">
     <div class="container">
       <app-card-row-loading />
       <app-card-row-loading />
