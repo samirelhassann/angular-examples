@@ -1,12 +1,26 @@
 <div *ngIf="loadingHandler.isLoading$ | async; else content">
-  <app-card-wrapper
+  <app-card
     title="Available Balances"
-    [isLoading]="true" />
+    icon="HandCoins">
+    <div class="container">
+      <app-card-row-loading />
+      <app-card-row-loading />
+      <app-card-row-loading />
+      <app-card-row-loading />
+      <app-card-row-loading />
+    </div>
+
+    <div class="highlight">
+      <app-card-row-loading [isBordered]="false" />
+      <app-card-row-loading [isBordered]="false" />
+    </div>
+  </app-card>
 </div>
 
 <ng-template #content>
-  <app-card-wrapper
+  <app-card
     title="Available Balances"
+    icon="HandCoins"
     [totalAmount]="totalBalance">
     <div class="container">
       <app-card-row
@@ -24,5 +38,5 @@
         [isValueHighlighted]="true"
         [isBordered]="false" />
     </div>
-  </app-card-wrapper>
+  </app-card>
 </ng-template>

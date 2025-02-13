@@ -1,9 +1,6 @@
-import { Injectable } from "@angular/core";
-
 import { BehaviorSubject, Observable, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
 
-@Injectable()
 export class LoadingHandler {
   private _isLoading$ = new BehaviorSubject(false);
 

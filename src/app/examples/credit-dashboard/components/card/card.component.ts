@@ -1,9 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-export interface CardComponentInputProps {
-  title: string;
-  totalAmount: number | undefined;
-}
+export type IconType = "HandCoins" | "CreditCard" | "User";
 
 @Component({
   selector: "app-card",
@@ -11,7 +8,8 @@ export interface CardComponentInputProps {
   templateUrl: "./card.component.html",
   styleUrl: "./card.component.scss",
 })
-export class CardComponent implements CardComponentInputProps {
+export class CardComponent {
   @Input({ required: true }) title!: string;
-  @Input() totalAmount: number | undefined;
+  @Input({ required: true }) icon!: IconType;
+  @Input() totalAmount?: number;
 }

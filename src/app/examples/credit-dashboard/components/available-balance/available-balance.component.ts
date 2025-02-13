@@ -14,11 +14,9 @@ export class FinancialCardComponent implements OnInit {
   infos: FormattedInfoCard[] = [];
   highlightInfos: FormattedInfoCard[] = [];
   totalBalance: number = 0;
+  loadingHandler: LoadingHandler = new LoadingHandler();
 
-  constructor(
-    private financialService: FinancialService,
-    protected loadingHandler: LoadingHandler,
-  ) {}
+  constructor(private financialService: FinancialService) {}
 
   ngOnInit() {
     this.getFinancialData();
