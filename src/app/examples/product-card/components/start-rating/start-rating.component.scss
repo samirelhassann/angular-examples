@@ -1,0 +1,12 @@
+@use "tokens" as *;
+
+.star-rating {
+  display: inline-block;
+  font-size: 24px;
+  color: $color-magenta-600;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 0.3s;
+}

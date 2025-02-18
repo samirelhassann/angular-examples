@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { CreditCardsModule } from "./examples/credit-cards/credit-cards.module";
 import { CreditDashBoardModule } from "./examples/credit-dashboard/credit-dashboard.module";
 import { LoginFormModule } from "./examples/login-form/login-form.module";
+import { ProductCardModule } from "./examples/product-card/product-card.module";
 import { UserListingModule } from "./examples/user-listing/user-listing.module";
 import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.component";
 
@@ -21,6 +22,7 @@ import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.co
     LoginFormModule,
     UserListingModule,
     CreditDashBoardModule,
+    ProductCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
