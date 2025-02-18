@@ -4,6 +4,9 @@ import { FinancialService } from "../../services/financial.service";
 import { FormattedInfoCard } from "../../types/formatted-info-card";
 import { LoadingHandler } from "../../utils/loading-handler";
 
+const LOADING_QUANTITY = 5;
+const HIGHLIGHT_LOADING_QUANTITY = 2;
+
 @Component({
   selector: "app-available-balance",
   standalone: false,
@@ -11,6 +14,9 @@ import { LoadingHandler } from "../../utils/loading-handler";
   styleUrl: "./available-balance.component.scss",
 })
 export class FinancialCardComponent implements OnInit {
+  loadingQuantity = Array.from({ length: LOADING_QUANTITY });
+  loadingHighlightQuantity = Array.from({ length: HIGHLIGHT_LOADING_QUANTITY });
+
   infos: FormattedInfoCard[] = [];
   highlightInfos: FormattedInfoCard[] = [];
   totalBalance: number = 0;

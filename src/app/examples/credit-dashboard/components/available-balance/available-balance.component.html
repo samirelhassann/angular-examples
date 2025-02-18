@@ -4,16 +4,11 @@
     icon="HandCoins"
     [isTotalAmountLoading]="true">
     <div class="container">
-      <app-card-row-loading />
-      <app-card-row-loading />
-      <app-card-row-loading />
-      <app-card-row-loading />
-      <app-card-row-loading />
+      <app-card-row-loading *ngFor="let _ of loadingQuantity" />
     </div>
 
     <div class="highlight">
-      <app-card-row-loading [isBordered]="false" />
-      <app-card-row-loading [isBordered]="false" />
+      <app-card-row-loading *ngFor="let _ of loadingHighlightQuantity" />
     </div>
   </app-card>
 </div>

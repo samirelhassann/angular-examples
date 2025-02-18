@@ -4,6 +4,8 @@ import { FinancialService } from "../../services/financial.service";
 import { FormattedInfoCard } from "../../types/formatted-info-card";
 import { LoadingHandler } from "../../utils/loading-handler";
 
+const LOADING_QUANTITY = 4;
+
 @Component({
   selector: "app-credit-card",
   standalone: false,
@@ -12,6 +14,8 @@ import { LoadingHandler } from "../../utils/loading-handler";
   styleUrl: "./credit-card.component.scss",
 })
 export class CreditCardComponent implements OnInit {
+  loadingQuantity = Array.from({ length: LOADING_QUANTITY });
+
   infos: FormattedInfoCard[] = [];
   highlightInfos: FormattedInfoCard[] = [];
   clientName: string = "";

@@ -4,13 +4,13 @@
     title="Credit Card">
     <div class="container">
       <div class="header">
-        <div class="card-infos">
-          <div class="card-info">
+        <div class="header__card-infos">
+          <div class="header__card-info">
             <app-skeleton
               [height]="18"
               [width]="100" />
           </div>
-          <div class="card-info">
+          <div class="header__card-info">
             <app-skeleton
               [height]="18"
               [width]="140" />
@@ -18,10 +18,9 @@
         </div>
       </div>
 
-      <app-card-row-loading />
-      <app-card-row-loading [isBordered]="false" />
-      <app-card-row-loading />
-      <app-card-row-loading [isBordered]="false" />
+      <app-card-row-loading
+        *ngFor="let _ of loadingQuantity; let even = even"
+        [isBordered]="even" />
     </div>
   </app-card>
 </div>
@@ -32,20 +31,20 @@
     title="Credit Card">
     <div class="container">
       <div class="header">
-        <div class="card-infos">
-          <div class="card-info">
+        <div class="header__card-infos">
+          <div class="header__card-info">
             <lucide-icon
               name="User"
-              class="card-info--icon"
+              class="header__card-info-icon"
               size="20" />
-            <div class="card-info--value">{{ clientName }}</div>
+            <span>{{ clientName }}</span>
           </div>
-          <div class="card-info">
+          <div class="header__card-info">
             <lucide-icon
               name="CreditCard"
-              class="card-info--icon"
+              class="header__card-info-icon"
               size="20" />
-            <div class="card-info--value">{{ cardNumber | cardNumberFormat }}</div>
+            <span>{{ cardNumber | cardNumberFormat }}</span>
           </div>
         </div>
       </div>

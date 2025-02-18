@@ -10,11 +10,11 @@
   align-items: center;
   padding: 1rem 0.5rem;
 
-  &--label {
+  &__label {
     color: $color-silver-500;
   }
 
-  &--value {
+  &__value {
     color: $color-silver-300;
     font-weight: bold;
   }
