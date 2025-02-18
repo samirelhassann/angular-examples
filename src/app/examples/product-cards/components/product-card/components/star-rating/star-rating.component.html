@@ -1,0 +1,8 @@
+<div class="star-rating">
+  <span
+    class="star"
+    *ngFor="let _ of stars; let starIndex = index"
+    [class.star--active]="starIndex + 1 <= rate"
+    >&#9733;</span
+  >
+</div>

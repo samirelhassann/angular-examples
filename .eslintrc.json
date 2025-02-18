@@ -24,6 +24,7 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
+        "max-classes-per-file": 0,
         "prettier/prettier": "error",
         "no-underscore-dangle": 0,
         "@typescript-eslint/lines-between-class-members": 0,
