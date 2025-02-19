@@ -1,20 +1,4 @@
 <div class="container">
-  <header class="header">
-    <div class="header__title">
-      <lucide-icon
-        [name]="icon"
-        size="23" />
-      <span>{{ title }}</span>
-    </div>
-
-    <app-skeleton
-      [height]="18"
-      [width]="70"
-      *ngIf="isTotalAmountLoading" />
-    <span *ngIf="!isTotalAmountLoading && !!totalAmount"> {{ totalAmount | currency }}</span>
-  </header>
-
-  <div class="content">
-    <ng-content />
-  </div>
+  <ng-content select="app-card-header" />
+  <ng-content select="app-card-content, [appCardContent]" />
 </div>

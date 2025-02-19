@@ -14,6 +14,8 @@ import { CardRowLoadingComponent } from "./components/card-row-loading/card-row-
 import { CardRowComponent } from "./components/card-row/card-row.component";
 import { FormatRowCardValuePipe } from "./components/card-row/pipes/format-row-card-value.pipe";
 import { CardComponent } from "./components/card/card.component";
+import { CardHeaderComponent } from "./components/card/components/card-header/card-header.component";
+import { CardContentDirective } from "./components/card/directives/card-content.directive";
 import { CreditCardComponent } from "./components/credit-card/credit-card.component";
 import { SkeletonComponent } from "./components/skeleton/skeleton.component";
 
@@ -26,13 +28,15 @@ import { FinancialService } from "./services/financial.service";
     CreditDashboardComponent,
     FinancialCardComponent,
     CardRowComponent,
-    CardComponent,
 
     FormatRowCardValuePipe,
     CreditCardComponent,
     CardNumberFormatPipe,
     CardRowLoadingComponent,
     SkeletonComponent,
+    CardComponent,
+    CardHeaderComponent,
+    CardContentDirective,
   ],
   providers: [FinancialService],
   imports: [
