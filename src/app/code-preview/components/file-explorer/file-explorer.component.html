@@ -1,0 +1,44 @@
+<div class="file-explorer">
+  <ul>
+    <ng-container *ngFor="let file of files">
+      <li>
+        <ng-container *ngIf="file.type === 'folder'; else fileTemplate">
+          <button
+            class="entity"
+            (click)="toggleFolder(getPath(file))">
+            <lucide-icon
+              [name]="getChevronName(getPath(file))"
+              class="entity__icon"
+              size="20" />
+
+            <lucide-icon
+              name="Folder"
+              class="entity__icon"
+              size="20" />
+
+            <span class="entity__label"> {{ file.name }} </span>
+          </button>
+
+          <div *ngIf="isFolderOpen(getPath(file))">
+            <app-file-explorer
+              [files]="file.children"
+              [selectedFile]="selectedFile"
+              (selectContentEmitt)="selectContent($event)" />
+          </div>
+        </ng-container>
+        <ng-template #fileTemplate>
+          <button
+            class="entity"
+            (click)="selectContent(file)"
+            [class.file--selected]="file === selectedFile">
+            <lucide-icon
+              name="File"
+              class="entity__icon"
+              size="20" />
+            <span class="entity__label">{{ file.name }}</span>
+          </button>
+        </ng-template>
+      </li>
+    </ng-container>
+  </ul>
+</div>

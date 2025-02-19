@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 
+export type SectionType = "component" | "code";
+
 @Component({
   selector: "app-root",
   standalone: false,
@@ -8,4 +10,10 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "angular-fundamentals";
+
+  sectionType: SectionType = "component";
+
+  handleChangeSectionType(sectionType: SectionType) {
+    this.sectionType = sectionType;
+  }
 }

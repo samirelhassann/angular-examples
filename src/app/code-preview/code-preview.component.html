@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="container__file-explorer">
+    <app-file-explorer
+      [files]="files"
+      [selectedFile]="selectedFile"
+      (selectContentEmitt)="handleSelectContent($event)" />
+  </div>
+</div>

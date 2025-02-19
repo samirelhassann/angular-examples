@@ -10,6 +10,7 @@ interface Route {
   route?: string;
   subItems?: Route[];
   showSubItems?: boolean;
+  relativePath?: string;
 }
 
 @Component({
@@ -27,6 +28,7 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
       {
         label: "Credit Cards",
         route: "/credit-cards",
+        relativePath: "src/app/examples/credit-cards",
       },
       {
         label: "Login Form",

@@ -1,6 +1,21 @@
 <main class="container">
-  <app-projects-mapping></app-projects-mapping>
+  <app-projects-mapping />
   <div class="content">
-    <router-outlet></router-outlet>
+    <div class="content__toggle">
+      <app-toggle
+        [sectionType]="sectionType"
+        (changeSectionTypeEmitt)="handleChangeSectionType($event)" />
+    </div>
+    <ng-container *ngIf="sectionType === 'component'">
+      <div class="content__router">
+        <router-outlet />
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="sectionType === 'code'">
+      <div class="content__code">
+        <app-code-preview />
+      </div>
+    </ng-container>
   </div>
 </main>
