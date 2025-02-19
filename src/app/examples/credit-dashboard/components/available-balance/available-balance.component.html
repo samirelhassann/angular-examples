@@ -1,4 +1,4 @@
-<div *ngIf="loadingHandler.isLoading$ | async; else content">
+<ng-container *ngIf="loadingHandler.isLoading$ | async; else content">
   <app-card>
     <app-card-header
       title="Available Balances"
@@ -14,7 +14,7 @@
       </div>
     </app-card-content>
   </app-card>
-</div>
+</ng-container>
 
 <ng-template #content>
   <app-card>
