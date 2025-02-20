@@ -34,6 +34,22 @@ export class CodePreviewComponent {
               content:
                 "PGRpdiBjbGFzcz0iY29udGFpbmVyIj4KICA8ZGl2IGNsYXNzPSJjYXJkcy1s\naXN0Ij4KICAgIDxhcHAtY3JlZGl0LWNhcmQKICAgICAgKm5nRm9yPSJsZXQg\nY2FyZCBvZiBjYXJkcyIKICAgICAgW3ZhcmlhbnRdPSJjYXJkLnZhcmlhbnQi\nCiAgICAgIFtjdXJyZW50QmFsYW5jZV09ImNhcmQuY3VycmVudEJhbGFuY2Ui\nCiAgICAgIFtjYXJkTnVtYmVyXT0iY2FyZC5udW1iZXIiCiAgICAgIFtleHBp\ncmF0aW9uRGF0ZV09ImNhcmQuZXhwaXJhdGlvbiI+PC9hcHAtY3JlZGl0LWNh\ncmQ+CiAgPC9kaXY+CjwvZGl2Pgo=\n",
             },
+            {
+              name: "app",
+              type: CodeFileType.FOLDER,
+              children: [
+                {
+                  name: "app.module.ts",
+                  type: CodeFileType.FILE,
+                  content: "export class AppModule {}",
+                },
+                {
+                  name: "app-routing.module.ts",
+                  type: CodeFileType.FILE,
+                  content: "export class AppRoutingModule {}",
+                },
+              ],
+            },
           ],
         },
       ],

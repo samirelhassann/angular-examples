@@ -5,4 +5,8 @@
       [selectedFile]="selectedFile"
       (selectContentEmitt)="handleSelectContent($event)" />
   </div>
+
+  <div class="container__code-preview">
+    <app-file-code-preview [content]="selectedFile?.content" />
+  </div>
 </div>

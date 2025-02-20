@@ -10,7 +10,11 @@ import {
   Folder,
   LucideAngularModule,
 } from "lucide-angular";
+import { HighlightAuto, provideHighlightOptions } from "ngx-highlightjs";
+import { HighlightLineNumbers } from "ngx-highlightjs/line-numbers";
 
+import { CodeHighlighterComponent } from "./code-preview/components/code-highlighter/code-highlighter.component";
+import { FileCodePreviewComponent } from "./code-preview/components/file-code-preview/file-code-preview.component";
 import { FileExplorerComponent } from "./code-preview/components/file-explorer/file-explorer.component";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -31,10 +35,13 @@ import { ToggleComponent } from "./toggle/toggle.component";
     ToggleComponent,
     CodePreviewComponent,
     FileExplorerComponent,
+    FileCodePreviewComponent,
+    CodeHighlighterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     RouterModule.forRoot([]),
 
     CreditCardsModule,
@@ -50,8 +57,14 @@ import { ToggleComponent } from "./toggle/toggle.component";
       ChevronRight,
       ChevronDown,
     }),
+    HighlightAuto,
+    HighlightLineNumbers,
   ],
-  providers: [],
+  providers: [
+    provideHighlightOptions({
+      fullLibraryLoader: () => import("highlight.js"),
+    }),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
