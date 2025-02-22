@@ -1,6 +1,8 @@
 @use "tokens" as *;
 
 .file-explorer {
+  user-select: none;
+
   ul {
     list-style-type: none;
     padding-left: 25px;

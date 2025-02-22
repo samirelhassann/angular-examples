@@ -20,7 +20,8 @@ export class CodePreviewComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.files = undefined;
     if (changes["selectedPath"] && changes["selectedPath"].currentValue) {
-      this.loadFiles(changes["selectedPath"].currentValue);
+      const path = changes["selectedPath"].currentValue;
+      this.loadFiles(path);
     }
   }
 
