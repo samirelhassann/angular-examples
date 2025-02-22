@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { CodeFile } from "../../types/code-file";
+import { CodeFile } from "@/domains/code-file";
 
 @Component({
   selector: "app-file-explorer",
@@ -8,18 +8,10 @@ import { CodeFile } from "../../types/code-file";
   templateUrl: "./file-explorer.component.html",
   styleUrl: "./file-explorer.component.scss",
 })
-export class FileExplorerComponent implements OnInit {
+export class FileExplorerComponent {
   @Input() files: CodeFile[] | undefined = [];
   @Input() selectedFile?: CodeFile;
   openFolders: Set<string> = new Set<string>();
-
-  ngOnInit(): void {
-    this.files?.forEach((file) => {
-      if (file.type === "folder") {
-        this.openFolders.add(file.name);
-      }
-    });
-  }
 
   @Output() selectContentEmitt = new EventEmitter<CodeFile>();
 

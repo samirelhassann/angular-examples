@@ -1,5 +1,5 @@
 <main class="container">
-  <app-projects-mapping />
+  <app-projects-mapping (routeSelectEmitt)="handleSelectedRoute($event)" />
   <div class="content">
     <div class="content__toggle">
       <app-toggle
@@ -14,7 +14,7 @@
 
     <ng-container *ngIf="sectionType === 'code'">
       <div class="content__code">
-        <app-code-preview />
+        <app-code-preview [selectedPath]="routeSelected?.relativePath" />
       </div>
     </ng-container>
   </div>

@@ -1,11 +1,16 @@
 /* eslint-disable no-param-reassign */
-/* eslint-disable max-len */
-import { Component, AfterViewInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  AfterViewInit,
+  OnDestroy,
+  EventEmitter,
+  Output,
+} from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 
 import { Subscription } from "rxjs";
 
-interface Route {
+export interface Route {
   label: string;
   route?: string;
   subItems?: Route[];
@@ -23,6 +28,8 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
   items: Route[];
   private routerSubscription: Subscription;
 
+  @Output() routeSelectEmitt = new EventEmitter<Route>();
+
   constructor(private router: Router) {
     this.items = [
       {
@@ -33,24 +40,29 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
       {
         label: "Login Form",
         route: "/login-form",
+        relativePath: "src/app/examples/login-form",
       },
       {
         label: "User Listing",
         route: "/user-listing",
+        relativePath: "src/app/examples/user-listing",
       },
       {
         label: "Credit Dashboard",
         route: "/credit-dashboard",
+        relativePath: "src/app/examples/credit-dashboard",
       },
       {
         label: "Product Card",
         route: "/product-card",
+        relativePath: "src/app/examples/product-cards",
       },
     ];
 
     this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.items = this.formattedRoutes(this.items);
+        this.checkAndEmitRoute(this.router.url);
       }
     });
   }
@@ -102,5 +114,12 @@ export class ProjectsMappingComponent implements AfterViewInit, OnDestroy {
 
   trackBySubItem(index: number, subItem: Route): string {
     return subItem.label;
+  }
+
+  private checkAndEmitRoute(currentUrl: string): void {
+    const matchedRoute = this.items.find((item) => item.route === currentUrl);
+    if (matchedRoute) {
+      this.routeSelectEmitt.emit(matchedRoute);
+    }
   }
 }

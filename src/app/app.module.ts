@@ -13,20 +13,21 @@ import {
 import { HighlightAuto, provideHighlightOptions } from "ngx-highlightjs";
 import { HighlightLineNumbers } from "ngx-highlightjs/line-numbers";
 
-import { CodeHighlighterComponent } from "./code-preview/components/code-highlighter/code-highlighter.component";
-import { FileCodePreviewComponent } from "./code-preview/components/file-code-preview/file-code-preview.component";
-import { FileExplorerComponent } from "./code-preview/components/file-explorer/file-explorer.component";
+import { CodePreviewComponent } from "./components/code-preview/code-preview.component";
+import { CodeHighlighterComponent } from "./components/code-preview/components/code-highlighter/code-highlighter.component";
+import { FileCodePreviewComponent } from "./components/code-preview/components/file-code-preview/file-code-preview.component";
+import { FileExplorerComponent } from "./components/code-preview/components/file-explorer/file-explorer.component";
+import { ProjectsMappingComponent } from "./components/projects-mapping/projects-mapping.component";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { CodePreviewComponent } from "./code-preview/code-preview.component";
 import { CreditCardsModule } from "./examples/credit-cards/credit-cards.module";
 import { CreditDashBoardModule } from "./examples/credit-dashboard/credit-dashboard.module";
 import { LoginFormModule } from "./examples/login-form/login-form.module";
 import { ProductCardsModule } from "./examples/product-cards/product-cards.module";
 import { UserListingModule } from "./examples/user-listing/user-listing.module";
-import { ProjectsMappingComponent } from "./projects-mapping/projects-mapping.component";
 import { ToggleComponent } from "./toggle/toggle.component";
+import { UseCaseModule } from "./use-case/use-case.module";
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ToggleComponent } from "./toggle/toggle.component";
     UserListingModule,
     CreditDashBoardModule,
     ProductCardsModule,
+    UseCaseModule,
 
     LucideAngularModule.pick({
       Component,
