@@ -1,0 +1,21 @@
+<main class="container">
+  <app-projects-mapping (routeSelectEmitt)="handleSelectedRoute($event)" />
+  <div class="content">
+    <div class="content__toggle">
+      <app-toggle
+        [sectionType]="sectionType"
+        (changeSectionTypeEmitt)="handleChangeSectionType($event)" />
+    </div>
+    <ng-container *ngIf="sectionType === 'component'">
+      <div class="content__router">
+        <router-outlet />
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="sectionType === 'code'">
+      <div class="content__code">
+        <app-code-preview [selectedPath]="routeSelected?.relativePath" />
+      </div>
+    </ng-container>
+  </div>
+</main>

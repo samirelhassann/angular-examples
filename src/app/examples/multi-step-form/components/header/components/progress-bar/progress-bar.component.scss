@@ -1,0 +1,17 @@
+@use "tokens" as *;
+
+.bar {
+  position: relative;
+  height: 0.25rem;
+  width: 100%;
+  background: $color-silver-600;
+  border-radius: 8px;
+}
+
+.progress {
+  position: absolute;
+  height: 100%;
+  background: $color-magenta-600;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}

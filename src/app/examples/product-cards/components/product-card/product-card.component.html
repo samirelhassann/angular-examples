@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card__image-container">
+    <img
+      [src]="productImage"
+      class="card__image" />
+
+    <div class="card__tags-container">
+      <ng-content select="app-product-tags" />
+    </div>
+
+    <div class="card__rating-container">
+      <ng-content select="app-star-rating" />
+    </div>
+  </div>
+
+  <div class="card__content">
+    <ng-content select="app-product-card-title, [appProductCardTitle]" />
+    <ng-content select="app-product-card-subtitle, [appProductCardSubtitle]" />
+
+    <div class="card__infos">
+      <ng-content select="app-product-price" />
+    </div>
+
+    <button class="card__button">Add to cart</button>
+  </div>
+</div>

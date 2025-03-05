@@ -1,0 +1,87 @@
+@use "tokens" as *;
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 10px rgba($color-magenta-400, 0.5);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 1rem;
+    font-weight: bold;
+    user-select: none;
+  }
+
+  input {
+    border: 1px solid $color-silver-600;
+    border-radius: 0.3rem;
+    background: transparent;
+    color: $color-silver-300;
+    padding: 18px 8px;
+    width: 250px;
+    font-size: 16px;
+    height: 25px;
+    caret-color: $color-magenta-600;
+
+    &::placeholder {
+      color: $color-silver-600;
+    }
+
+    &:focus {
+      transition: all 0.3s;
+      outline: none;
+      background: transparent;
+      border-color: $color-magenta-600;
+    }
+  }
+
+  .validation-warning {
+    font-size: 14px;
+    color: #FF637E;
+  }
+}
+
+.forget-password {
+  font-size: 14px;
+  color: $color-silver-500;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: $color-magenta-600;
+  }
+}
+
+.access-button {
+  user-select: none;
+  margin-top: 20px;
+  background: $color-magenta-600;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

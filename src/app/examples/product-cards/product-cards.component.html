@@ -1,0 +1,11 @@
+<div class="example-container">
+  <app-product-card productImage="boot-example.png">
+    <app-star-rating [rate]="4" />
+    <app-product-tags [tags]="['50% OFF']" />
+    <span appProductCardTitle>Nike Air MX Super 2500 - Red</span>
+    <span appProductCardSubtitle>Comfortable sneaker with a bold red design</span>
+    <app-product-price
+      [actual]="100"
+      [old]="200" />
+  </app-product-card>
+</div>

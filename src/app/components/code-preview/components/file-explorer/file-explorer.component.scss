@@ -1,0 +1,42 @@
+@use "tokens" as *;
+
+.file-explorer {
+  user-select: none;
+
+  ul {
+    list-style-type: none;
+    padding-left: 25px;
+  }
+}
+
+.entity {
+  background: transparent;
+  color: $color-silver-300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  margin-top: 4px;
+  outline: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__icon {
+    display: flex;
+  }
+
+  &__label {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}
+
+.file {
+  &--selected {
+    color: $color-magenta-400;
+  }
+}

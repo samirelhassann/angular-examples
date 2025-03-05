@@ -1,0 +1,14 @@
+<header class="header">
+  <div class="header__title">
+    <lucide-icon
+      [name]="icon"
+      size="23" />
+    <span>{{ title }}</span>
+  </div>
+
+  <app-skeleton
+    [height]="18"
+    [width]="70"
+    *ngIf="isLoading" />
+  <span *ngIf="!isLoading && !!totalAmount"> {{ totalAmount | currency }}</span>
+</header>

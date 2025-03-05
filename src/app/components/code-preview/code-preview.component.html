@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="container__file-explorer">
+    <div *ngIf="files$ | async as files">
+      <app-file-explorer
+        [files]="files"
+        [selectedFile]="selectedFile"
+        (selectContentEmitt)="handleSelectContent($event)" />
+    </div>
+  </div>
+
+  <div class="container__code-preview">
+    <app-file-code-preview [content]="selectedFile?.content" />
+  </div>
+</div>

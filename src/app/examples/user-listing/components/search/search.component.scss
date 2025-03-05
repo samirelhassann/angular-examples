@@ -1,0 +1,63 @@
+@use "tokens" as *;
+
+.search {
+  position: relative;
+  transition: all 0.3s;
+
+  &--icon--search {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 9px;
+    color: $color-silver-500;
+
+    &--hide {
+      display: none;
+    }
+  }
+
+  &--x--search {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 9px;
+    color: $color-silver-500;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-magenta-600;
+    }
+
+    &--hide {
+      display: none;
+    }
+  }
+
+  input {
+    border: 1px solid $color-silver-600;
+    border-radius: 0.3rem;
+    background: transparent;
+    color: $color-silver-300;
+    padding: 18px 8px;
+    width: 170px;
+    font-size: 16px;
+    height: 25px;
+    caret-color: $color-magenta-600;
+    padding-right: 35px;
+
+    &::placeholder {
+      color: $color-silver-600;
+    }
+
+    &:focus {
+      transition: all 0.3s;
+      outline: none;
+      background: transparent;
+      border-color: $color-magenta-600;
+    }
+  }
+}

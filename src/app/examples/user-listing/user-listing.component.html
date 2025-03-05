@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="content">
+    <span> {{ 1000 | currency: "BRL" : true : "1.2-2" }} </span>
+    <header class="header">
+      <div class="header--title-section">
+        <span class="title">Users</span>
+        <span class="description">Here you can see all the users</span>
+      </div>
+
+      <div class="header--actions">
+        <app-search (searchInputtedEmitt)="onSearchInputted($event)" />
+      </div>
+    </header>
+
+    <app-users-table [users]="filteredUsers" />
+  </div>
+</div>

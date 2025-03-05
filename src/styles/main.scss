@@ -1,0 +1,13 @@
+@use "tokens" as *;
+@use "global-classes";
+@use "reset";
+@use "scrollbar";
+@use "components/index";
+@use "highlight";
+
+body {
+  background-color: #171717;
+  font-family: mona-sans, sans-serif;
+  color: $color-silver-300;
+  margin: 0;
+}

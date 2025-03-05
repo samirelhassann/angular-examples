@@ -1,0 +1,42 @@
+@use "tokens" as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  border: 1px solid $color-silver-500;
+  width: fit-content;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.toggle {
+  padding: 0.5rem 1rem;
+  background: #7e848d17;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  color: $color-silver-300;
+
+  &:hover:not(&--active) {
+    color: $color-magenta-600;
+  }
+
+  &--active {
+    background: $color-magenta-600;
+    color: white;
+  }
+
+  &--border-left-rounded {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  &--border-right-rounded {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+  }
+
+  &__icon {
+    display: flex;
+  }
+}

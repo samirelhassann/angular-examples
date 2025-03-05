@@ -1,0 +1,25 @@
+@use "tokens" as *;
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::selection {
+  background-color: rgb(152 109 255 / 40%);
+  color: white;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-silver-500;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $color-magenta-600;
+}

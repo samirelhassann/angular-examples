@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <button (click)="openDialog(user)">
+        <td>{{ user.name }}</td>
+        <td>
+          <app-status-tag [enabled]="user.enabled"></app-status-tag>
+        </td>
+        <td>{{ user.createdDate | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+      </button>
+    </tr>
+  </tbody>
+</table>

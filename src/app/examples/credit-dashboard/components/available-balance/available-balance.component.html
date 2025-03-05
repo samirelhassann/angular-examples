@@ -1,0 +1,44 @@
+<ng-container *ngIf="loadingHandler.isLoading$ | async; else content">
+  <app-card>
+    <app-card-header
+      title="Available Balances"
+      icon="HandCoins"
+      [isLoading]="true" />
+    <app-card-content>
+      <div class="container">
+        <app-card-row-loading *ngFor="let _ of loadingQuantity" />
+      </div>
+
+      <div class="highlight">
+        <app-card-row-loading *ngFor="let _ of loadingHighlightQuantity" />
+      </div>
+    </app-card-content>
+  </app-card>
+</ng-container>
+
+<ng-template #content>
+  <app-card>
+    <app-card-header
+      title="Available Balances"
+      icon="HandCoins"
+      [totalAmount]="totalBalance" />
+    <app-card-content>
+      <div class="container">
+        <app-card-row
+          *ngFor="let row of infos; let isLast = last"
+          [label]="row.label"
+          [value]="row.value"
+          [isBordered]="!isLast" />
+      </div>
+
+      <div class="highlight">
+        <app-card-row
+          *ngFor="let row of highlightInfos"
+          [label]="row.label"
+          [value]="row.value"
+          [isValueHighlighted]="true"
+          [isBordered]="false" />
+      </div>
+    </app-card-content>
+  </app-card>
+</ng-template>
