@@ -11,5 +11,6 @@ export class InputComponent {
   @Input({ required: true }) id!: string;
   @Input({ required: true }) label!: string;
   @Input({ required: true }) formGroup!: FormGroup;
+  @Input() optional?: boolean = false;
   @Input() placeHolder?: string;
 }

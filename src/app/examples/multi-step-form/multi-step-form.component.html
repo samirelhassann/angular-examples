@@ -10,7 +10,10 @@
           <app-step-1
             *ngSwitchCase="1"
             [formGroup]="formGroups[0]" />
-          <div *ngSwitchCase="2"></div>
+
+          <app-step-2
+            *ngSwitchCase="2"
+            [formGroup]="formGroups[1]" />
           <div *ngSwitchCase="3"></div>
         </ng-container>
 

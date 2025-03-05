@@ -7,8 +7,6 @@ import {
   addressInfoSchema,
   BasicInfoSchema,
   basicInfoSchema,
-  ContactInfoSchema,
-  contactInfoSchema,
 } from "./form-schema";
 import { Step } from "./types/step";
 
@@ -30,11 +28,6 @@ export class MultiStepFormComponent {
       title: "Address Information",
       subTitle: "Enter here your address informations",
     },
-    {
-      step: 3,
-      title: "Contact Information",
-      subTitle: "Enter here your contact informations",
-    },
   ];
 
   actualStep: Step = this.steps[0];
@@ -48,14 +41,16 @@ export class MultiStepFormComponent {
     this.formGroups = [
       this.fb.group(<BasicInfoSchema>{
         name: "",
+        lastName: "",
         email: "",
       }),
       this.fb.group(<AddressInfoSchema>{
         address: "",
+        additionalAddress: "",
         city: "",
-      }),
-      this.fb.group(<ContactInfoSchema>{
-        phone: "",
+        state: "",
+        zipCode: "",
+        country: "",
       }),
     ];
 
@@ -91,7 +86,7 @@ export class MultiStepFormComponent {
 
   validateCurrentStep(): boolean {
     const currentData = this.formGroups[this.currentStep - 1].value;
-    const schemas = [basicInfoSchema, addressInfoSchema, contactInfoSchema];
+    const schemas = [basicInfoSchema, addressInfoSchema];
     const validation = schemas[this.currentStep - 1].safeParse(currentData);
 
     if (!validation.success) {

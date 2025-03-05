@@ -5,10 +5,21 @@
   flex-direction: column;
   gap: 8px;
 
-  label {
-    font-size: 1rem;
-    font-weight: bold;
-    user-select: none;
+  &__title {
+    display: flex;
+    align-items: end;
+    gap: 6px;
+
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: $color-silver-500;
+    }
   }
 
   input {
