@@ -18,6 +18,7 @@ import { CodeHighlighterComponent } from "./components/code-preview/components/c
 import { FileCodePreviewComponent } from "./components/code-preview/components/file-code-preview/file-code-preview.component";
 import { FileExplorerComponent } from "./components/code-preview/components/file-explorer/file-explorer.component";
 import { ProjectsMappingComponent } from "./components/projects-mapping/projects-mapping.component";
+import { SkeletonComponent } from "./components/skeleton/skeleton.component";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -39,6 +40,7 @@ import { UseCaseModule } from "./use-case/use-case.module";
     FileExplorerComponent,
     FileCodePreviewComponent,
     CodeHighlighterComponent,
+    SkeletonComponent,
   ],
   imports: [
     BrowserModule,

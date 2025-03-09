@@ -10,7 +10,7 @@ export type GetFolderFilesRequestModel = RequestModel<{
   path: PathParams;
 }>;
 
-export interface GetFolderFilesResponseModel {
+interface GetFolderFileResponseModel {
   name: string;
   path: string;
   sha: string;
@@ -26,3 +26,5 @@ export interface GetFolderFilesResponseModel {
     html: string;
   };
 }
+
+export type GetFolderFilesResponseModel = GetFolderFileResponseModel[];

@@ -20,11 +20,14 @@ import {
 } from "lucide-angular";
 
 import { SearchComponent } from "./components/search/search.component";
+import { SkeletonComponent } from "./components/skeleton/skeleton.component";
 import { UserDetailsDialogComponent } from "./components/user-details-dialog/user-details-dialog.component";
 import { StatusTagComponent } from "./components/users-table/components/status-tag/status-tag.component";
 import { UsersTableComponent } from "./components/users-table/users-table.component";
 
 import { AddressFormatPipe } from "./pipes/address-format.pipe";
+import { FilterUsersPipe } from "./pipes/filter-users.pipe";
+import { UseCasesModule } from "./use-cases/use-cases.module";
 import { UserListingComponent } from "./user-listing.component";
 
 registerLocaleData(localePT);
@@ -38,6 +41,8 @@ registerLocaleData(localePT);
     UsersTableComponent,
     StatusTagComponent,
     UserDetailsDialogComponent,
+    SkeletonComponent,
+    FilterUsersPipe,
   ],
   providers: [
     {
@@ -53,6 +58,7 @@ registerLocaleData(localePT);
     CommonModule,
     FormsModule,
     MatDialogModule,
+    UseCasesModule,
     LucideAngularModule.pick({
       File,
       Home,

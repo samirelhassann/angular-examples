@@ -1,6 +1,5 @@
 <div class="container">
   <div class="content">
-    <span> {{ 1000 | currency: "BRL" : true : "1.2-2" }} </span>
     <header class="header">
       <div class="header--title-section">
         <span class="title">Users</span>
@@ -12,6 +11,15 @@
       </div>
     </header>
 
-    <app-users-table [users]="filteredUsers" />
+    <ng-container *ngIf="usersState$ | async as usersState">
+      <app-users-table
+        *ngIf="usersState.isLoading"
+        [users]="[]"
+        [isLoading]="true" />
+
+      <app-users-table
+        *ngIf="usersState.success"
+        [users]="usersState.data | filterUsers: filteredText" />
+    </ng-container>
   </div>
 </div>

@@ -7,7 +7,10 @@ import {
   GetFileContentRequestModel,
   GetFileContentResponseModel,
 } from "./dto/get-file-content-dto";
-import { GetFolderFilesRequestModel } from "./dto/get-folder-files-dto";
+import {
+  GetFolderFilesRequestModel,
+  GetFolderFilesResponseModel,
+} from "./dto/get-folder-files-dto";
 import { GITHUB_ENDPOINTS } from "./endpoints";
 
 @Injectable({
@@ -25,7 +28,7 @@ export class GithubService {
     });
   }
 
-  getFileContent(
+  async getFileContent(
     requestModel: GetFileContentRequestModel,
   ): Promise<GetFileContentResponseModel> {
     return this.axiosClient
@@ -33,9 +36,9 @@ export class GithubService {
       .then((response) => response.data);
   }
 
-  getFolderFiles(
+  async getFolderFiles(
     requestModel: GetFolderFilesRequestModel,
-  ): Promise<GetFileContentResponseModel[]> {
+  ): Promise<GetFolderFilesResponseModel> {
     return this.axiosClient
       .get(GITHUB_ENDPOINTS.GET_FOLDER_FILES(requestModel))
       .then((response) => response.data);

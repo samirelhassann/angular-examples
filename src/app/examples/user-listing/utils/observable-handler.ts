@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from "@angular/core";
 
 import { BehaviorSubject, Observable, Subject } from "rxjs";
-import { catchError, finalize, takeUntil } from "rxjs/operators";
+import { catchError, finalize, take } from "rxjs/operators";
 
 export interface ServiceState<T> {
   data: T;
@@ -35,14 +35,14 @@ export class ObservableHandler implements OnDestroy {
 
     useCase()
       .pipe(
-        takeUntil(this.destroy$),
+        take(1),
         catchError((error) => {
           state$.next({
             data: defaultValue,
             isLoading: false,
             error: true,
             success: false,
-            errorMessage: error.message,
+            errorMessage: error.message || "An error occurred",
           });
           return [];
         }),
@@ -62,9 +62,6 @@ export class ObservableHandler implements OnDestroy {
   }
 
   private getDefaultValue<T>(): T {
-    if (Array.isArray([] as unknown as T)) {
-      return [] as unknown as T;
-    }
     return {} as T;
   }
 }

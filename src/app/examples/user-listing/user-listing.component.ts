@@ -1,27 +1,37 @@
-/* eslint-disable max-len */
 import { Component, OnInit } from "@angular/core";
 
-import makeUserList from "./data/makeUserList";
+import { Observable } from "rxjs";
+
 import { User } from "./domains/user";
+import { GetUsersUseCase } from "./use-cases/get-file-content/get-users.use-case";
+import { ObservableHandler, ServiceState } from "./utils/observable-handler";
 
 @Component({
   selector: "app-user-listing",
   standalone: false,
   templateUrl: "./user-listing.component.html",
-  styleUrl: "./user-listing.component.scss",
+  styleUrls: ["./user-listing.component.scss"],
 })
 export class UserListingComponent implements OnInit {
-  users: User[] = [];
-  filteredUsers: User[] = [];
+  filteredText: string = "";
+  usersState$?: Observable<ServiceState<User[]>>;
+
+  constructor(
+    private getUsersUseCase: GetUsersUseCase,
+    private observableHandler: ObservableHandler,
+  ) {}
 
   ngOnInit(): void {
-    this.users = makeUserList();
-    this.filteredUsers = this.users;
+    this.getUsers();
+  }
+
+  private getUsers() {
+    this.usersState$ = this.observableHandler.manage(() =>
+      this.getUsersUseCase.execute(),
+    );
   }
 
   onSearchInputted(inputText: string) {
-    this.filteredUsers = this.users.filter((user) =>
-      user.name.toLowerCase().includes(inputText.toLowerCase()),
-    );
+    this.filteredText = inputText;
   }
 }

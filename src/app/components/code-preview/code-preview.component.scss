@@ -22,3 +22,10 @@
     overflow: auto;
   }
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-left: 25px;
+}

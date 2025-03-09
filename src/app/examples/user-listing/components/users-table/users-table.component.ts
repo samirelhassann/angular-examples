@@ -4,6 +4,8 @@ import { MatDialog } from "@angular/material/dialog";
 import { User } from "../../domains/user";
 import { UserDetailsDialogComponent } from "../user-details-dialog/user-details-dialog.component";
 
+const LOADING_QUANTITY = 7;
+
 @Component({
   selector: "app-users-table",
   standalone: false,
@@ -12,6 +14,8 @@ import { UserDetailsDialogComponent } from "../user-details-dialog/user-details-
 })
 export class UsersTableComponent {
   @Input({ required: true }) users!: User[];
+  @Input() isLoading = false;
+  loadingQuantity = Array.from({ length: LOADING_QUANTITY });
 
   constructor(public dialog: MatDialog) {}
 

@@ -25,7 +25,7 @@ export class GetFolderFilesMapper {
     };
   }
 
-  toDomain(serviceResponse: GetFolderFilesResponseModel[]): CodeFile[] {
+  toDomain(serviceResponse: GetFolderFilesResponseModel): CodeFile[] {
     return serviceResponse.map((response) => {
       const { name, type, path } = response;
 

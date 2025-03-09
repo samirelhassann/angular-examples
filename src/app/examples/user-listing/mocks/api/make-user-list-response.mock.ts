@@ -1,12 +1,15 @@
 import { faker } from "@faker-js/faker";
 
-import { User } from "../domains/user";
+import {
+  GetUserResponseModel,
+  GetUsersResponseModel,
+} from "../../services/user/dto/get-users.dto";
 
-export default function makeUserList() {
+export default function makeUserList(): GetUsersResponseModel {
   return Array.from(
     { length: 100 },
     () =>
-      <User>{
+      <GetUserResponseModel>{
         id: faker.string.uuid(),
         name: faker.person.fullName(),
         email: faker.internet.email(),
