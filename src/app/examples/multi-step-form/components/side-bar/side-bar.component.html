@@ -1,0 +1,21 @@
+<div class="side-bar">
+  <div class="side-bar__label">
+    <span class="side-bar__title">{{ step.title }}</span>
+    <span class="side-bar__subtitle">{{ step.subTitle }}</span>
+  </div>
+
+  <div class="side-bar__buttons">
+    <button
+      class="button button--confirm"
+      (click)="onContinue()"
+      [disabled]="isLastStep">
+      Continue
+    </button>
+    <button
+      class="button button--back"
+      (click)="onBack()"
+      [disabled]="isFirstStep">
+      Back
+    </button>
+  </div>
+</div>

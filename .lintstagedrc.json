@@ -1,0 +1,7 @@
+{
+  "**/*.ts": [
+    "eslint --cache --max-warnings=0 --fix"
+  ],
+  "*.{css,scss}": "stylelint --fix",
+  "/**/*.json": "prettier --write"
+}

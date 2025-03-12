@@ -1,0 +1,26 @@
+@use "tokens" as *;
+
+$skeleton-animation: shimmer 0.9s infinite linear;
+
+.skeleton-box {
+  background-color: #3434340e;
+  animation: $skeleton-animation;
+  background-image: linear-gradient(
+    90deg,
+    #3434340e 25%,
+    $color-silver-600 50%,
+    #3434340e 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}

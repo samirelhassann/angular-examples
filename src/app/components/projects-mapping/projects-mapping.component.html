@@ -1,0 +1,40 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<div class="container">
+  <ul class="list">
+    <li
+      *ngFor="let item of items; trackBy: trackByItem"
+      style="display: flex; flex-direction: column; justify-content: space-between">
+      <ng-container *ngIf="item.route; else noRoute">
+        <a
+          class="item-list"
+          [routerLink]="item.route"
+          [class.active]="isActive(item.route)"
+          (click)="toggleSubItems(item)">
+          {{ item.label }}
+        </a>
+      </ng-container>
+
+      <ng-template #noRoute>
+        <span
+          class="item-list"
+          (click)="toggleSubItems(item)">
+          {{ item.label }}
+        </span>
+      </ng-template>
+
+      <ul *ngIf="item.showSubItems">
+        <li
+          *ngFor="let subItem of item.subItems; trackBy: trackBySubItem"
+          class="sub-item">
+          <a
+            class="item-list"
+            [routerLink]="subItem.route"
+            [class.active]="subItem.route ? isActive(subItem.route) : false">
+            {{ subItem.label }}
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

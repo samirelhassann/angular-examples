@@ -1,0 +1,52 @@
+@use "tokens" as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__title {
+    display: flex;
+    align-items: end;
+    gap: 6px;
+
+    label {
+      font-size: 1rem;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    span {
+      font-size: 0.8rem;
+      color: $color-silver-500;
+    }
+  }
+
+  input {
+    border: 1px solid $color-silver-600;
+    border-radius: 0.3rem;
+    background: transparent;
+    color: $color-silver-300;
+    padding: 18px 8px;
+    width: 250px;
+    font-size: 16px;
+    height: 25px;
+    caret-color: $color-magenta-600;
+
+    &::placeholder {
+      color: $color-silver-600;
+    }
+
+    &:focus {
+      transition: all 0.3s;
+      outline: none;
+      background: transparent;
+      border-color: $color-magenta-600;
+    }
+  }
+
+  .validation-warning {
+    font-size: 14px;
+    color: #ff637e;
+  }
+}

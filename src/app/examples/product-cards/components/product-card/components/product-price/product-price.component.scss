@@ -1,0 +1,25 @@
+@use "tokens" as *;
+
+.price {
+  &-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+
+  &__actual {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: bold;
+    color: $color-magenta-400;
+    letter-spacing: 1px;
+  }
+
+  &__old {
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-decoration: line-through;
+    color: $color-silver-600;
+  }
+}

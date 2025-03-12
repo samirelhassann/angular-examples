@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="content">
+    <header class="header">
+      <div class="header--title-section">
+        <span class="title">Users</span>
+        <span class="description">Here you can see all the users</span>
+      </div>
+
+      <div class="header--actions">
+        <app-search (searchInputtedEmitt)="onSearchInputted($event)" />
+      </div>
+    </header>
+
+    <ng-container *ngIf="usersState$ | async as usersState">
+      <app-users-table
+        *ngIf="usersState.isLoading"
+        [users]="[]"
+        [isLoading]="true" />
+
+      <app-users-table
+        *ngIf="usersState.success"
+        [users]="usersState.data | filterUsers: filteredText" />
+    </ng-container>
+  </div>
+</div>

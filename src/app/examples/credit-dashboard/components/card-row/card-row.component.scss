@@ -1,0 +1,26 @@
+@use "tokens" as *;
+
+.bordered {
+  border-bottom: 0.5px solid $color-silver-600;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+
+  &__label {
+    color: $color-silver-500;
+  }
+
+  &__value {
+    color: $color-silver-300;
+    font-weight: bold;
+  }
+
+  .highlight {
+    color: $color-magenta-400;
+    font-weight: bold;
+  }
+}

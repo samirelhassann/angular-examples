@@ -1,0 +1,18 @@
+<div
+  class="section"
+  [formGroup]="formGroup">
+  <div class="section__title">
+    <label [for]="id"> {{ label }} </label>
+    <span *ngIf="optional">(Optional)</span>
+  </div>
+  <input
+    [id]="id"
+    [name]="id"
+    [placeholder]="placeHolder"
+    [formControlName]="id" />
+  <span
+    class="validation-warning"
+    *ngIf="formGroup.get(id)?.hasError('zod')">
+    {{ formGroup.get(id)?.getError("zod") }}</span
+  >
+</div>

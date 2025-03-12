@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="cards-list">
+    <app-credit-card
+      *ngFor="let card of cards"
+      [variant]="card.variant"
+      [currentBalance]="card.currentBalance"
+      [cardNumber]="card.number"
+      [expirationDate]="card.expiration"></app-credit-card>
+  </div>
+</div>

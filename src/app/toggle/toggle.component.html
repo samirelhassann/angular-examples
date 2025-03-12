@@ -1,0 +1,20 @@
+<div class="container">
+  <button
+    class="toggle toggle--border-left-rounded"
+    [class.toggle--active]="sectionType === 'component'"
+    (click)="onChangeType('component')">
+    <lucide-icon
+      name="Component"
+      class="toggle__icon"
+      size="24" />
+  </button>
+  <button
+    class="toggle toggle--border-right-rounded"
+    [class.toggle--active]="sectionType === 'code'"
+    (click)="onChangeType('code')">
+    <lucide-icon
+      name="Code"
+      class="toggle__icon"
+      size="24" />
+  </button>
+</div>

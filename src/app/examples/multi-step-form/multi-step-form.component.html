@@ -1,0 +1,30 @@
+<div class="example-container">
+  <div class="container">
+    <div class="form">
+      <app-header
+        [currentStep]="currentStep"
+        [totalSteps]="steps.length" />
+
+      <div class="content">
+        <ng-container [ngSwitch]="currentStep">
+          <app-step-1
+            *ngSwitchCase="1"
+            [formGroup]="formGroups[0]" />
+
+          <app-step-2
+            *ngSwitchCase="2"
+            [formGroup]="formGroups[1]" />
+          <div *ngSwitchCase="3"></div>
+        </ng-container>
+
+        <div class="divider"></div>
+
+        <app-side-bar
+          [step]="actualStep"
+          [isFirstStep]="isFirstStep"
+          [isLastStep]="isLastStep"
+          (buttonClickedEmitt)="changeCurrentStep($event)" />
+      </div>
+    </div>
+  </div>
+</div>

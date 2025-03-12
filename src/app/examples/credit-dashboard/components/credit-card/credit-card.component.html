@@ -1,0 +1,65 @@
+<div *ngIf="loadingHandler.isLoading$ | async; else content">
+  <app-card>
+    <app-card-header
+      icon="CreditCard"
+      title="Credit Card" />
+    <app-card-content>
+      <div class="container">
+        <div class="header">
+          <div class="header__card-infos">
+            <div class="header__card-info">
+              <app-skeleton
+                [height]="18"
+                [width]="100" />
+            </div>
+            <div class="header__card-info">
+              <app-skeleton
+                [height]="18"
+                [width]="140" />
+            </div>
+          </div>
+        </div>
+
+        <app-card-row-loading
+          *ngFor="let _ of loadingQuantity; let even = even"
+          [isBordered]="even" />
+      </div>
+    </app-card-content>
+  </app-card>
+</div>
+
+<ng-template #content>
+  <app-card>
+    <app-card-header
+      icon="CreditCard"
+      title="Credit Card" />
+    <app-card-content>
+      <div class="container">
+        <div class="header">
+          <div class="header__card-infos">
+            <div class="header__card-info">
+              <lucide-icon
+                name="User"
+                class="header__card-info-icon"
+                size="20" />
+              <span>{{ clientName }}</span>
+            </div>
+            <div class="header__card-info">
+              <lucide-icon
+                name="CreditCard"
+                class="header__card-info-icon"
+                size="20" />
+              <span>{{ cardNumber | cardNumberFormat }}</span>
+            </div>
+          </div>
+        </div>
+
+        <app-card-row
+          *ngFor="let row of infos; let i = index"
+          [label]="row.label"
+          [value]="row.value"
+          [isBordered]="i % 2 === 0" />
+      </div>
+    </app-card-content>
+  </app-card>
+</ng-template>

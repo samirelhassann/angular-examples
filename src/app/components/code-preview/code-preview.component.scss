@@ -1,0 +1,31 @@
+@use "tokens" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  width: 100%;
+  border: 1px solid $color-silver-600;
+  border-radius: 1rem;
+  overflow: hidden;
+  height: calc(100vh - 120px);
+
+  &__file-explorer {
+    height: 100%;
+    padding: 1rem 0;
+    border-right: 1px solid $color-silver-600;
+    overflow: auto;
+    background: #21222c;
+  }
+
+  &__code-preview {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-left: 25px;
+}

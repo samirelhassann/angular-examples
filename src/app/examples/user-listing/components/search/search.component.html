@@ -1,0 +1,26 @@
+<div class="search">
+  <lucide-icon
+    name="search"
+    size="20"
+    class="search--icon--search"
+    [class.search--icon--search--hide]="hasInputtedText">
+  </lucide-icon>
+  <button
+    class="search--x--search"
+    (click)="onClickClear()">
+    <lucide-icon
+      name="x"
+      size="20"
+      [class.search--x--search--hide]="!hasInputtedText">
+    </lucide-icon>
+  </button>
+  <input
+    id="search"
+    type="text"
+    name="search"
+    [(ngModel)]="inputText"
+    (ngModelChange)="onSearchChange($event)"
+    (focus)="onSearchFocus(true)"
+    (blur)="onSearchFocus(false)"
+    placeholder="Search here" />
+</div>

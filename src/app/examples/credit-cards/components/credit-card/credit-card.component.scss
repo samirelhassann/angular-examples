@@ -1,0 +1,101 @@
+@use "tokens" as *;
+
+.credit-card {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 70px;
+  border-radius: 45px;
+  position: relative;
+  overflow: hidden;
+
+  &--violet {
+    background: radial-gradient(
+        circle at top right,
+        rgb(255 255 255 / 23.3%),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgb(0 0 0 / 20%),
+        transparent 10%
+      ),
+      linear-gradient(to top right, #986dff, #2b37e2),
+      linear-gradient(to bottom right, #986dff, #2b37e2);
+  }
+
+  &--black {
+    background: radial-gradient(
+        circle at top right,
+        rgb(255 255 255 / 23.3%),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgb(0 0 0 / 20%),
+        transparent 10%
+      ),
+      linear-gradient(to top right, #00000070, #434343),
+      linear-gradient(to bottom right, #00000070, #434343);
+  }
+
+  &--blue {
+    background: radial-gradient(
+        circle at top right,
+        rgb(255 255 255 / 23.3%),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgb(0 0 0 / 20%),
+        transparent 10%
+      ),
+      linear-gradient(to top right, #00b0ff, #001c7f),
+      linear-gradient(to bottom right, #00b0ff, #001c7f);
+  }
+}
+
+.header {
+  display: flex;
+  gap: 4.375rem;
+  align-items: start;
+  justify-content: space-between;
+
+  &--logo {
+    width: 80px;
+    height: 80px;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+.balance-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &--label {
+    font-size: 1.125rem;
+    color: #fff8;
+  }
+
+  &--quantity {
+    font-size: 2.5rem;
+    color: white;
+    font-family: monospace;
+  }
+}
+
+.footer {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+
+  &--card-number,
+  &--expiration {
+    font-size: 1.125rem;
+    color: white;
+    font-family: monospace;
+  }
+}

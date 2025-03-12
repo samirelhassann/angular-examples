@@ -1,0 +1,15 @@
+@use "tokens" as *;
+
+.ae-c-product-card-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-wrap: wrap;
+}
+
+.ae-c-product-card-subtitle {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: $color-silver-500;
+  text-wrap: wrap;
+  width: 100%;
+}
