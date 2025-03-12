@@ -38,7 +38,7 @@ jobs:
         sed -i "s/token: \"\"/token: \"${{ secrets.API_TOKEN }}\"/" src/environments/environment.prod.ts
 
     - name: Build project
-      run: yarn build --configuration=production
+      run: yarn build
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
