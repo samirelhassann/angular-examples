@@ -44,5 +44,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: dist/browser
-        branch: master  
+        branch: prod  
         token: ${{ secrets.GH_TOKEN }}
