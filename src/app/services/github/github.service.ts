@@ -22,9 +22,9 @@ export class GithubService {
   constructor() {
     this.axiosClient = axios.create({
       baseURL: environment.github.host,
-      // headers: {
-      //   Authorization: environment.github.token,
-      // },
+      headers: {
+        Authorization: environment.github.token,
+      },
     });
   }
 
